@@ -28,7 +28,7 @@ function Header() {
         </Navbar.Collapse>
         <div className="buttons">
           <a href="" className="btn btn-outline-dark ms-2">
-           <i className="fa fa-shopping-cart me-1"></i>Cart ({state})
+           <i className="fa fa-shopping-cart me-1"></i>Cart ({state.length})
           </a>
         </div>
       </Container>

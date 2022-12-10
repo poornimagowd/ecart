@@ -1,10 +1,10 @@
 import handleCart from './handleCart'
 import { combineReducers  } from 'redux'
 
-const rootReducer = combineReducers(
+const rootReducers = combineReducers(
     {
         handleCart,
     }
 )
 
-export default rootReducer
+export default rootReducers

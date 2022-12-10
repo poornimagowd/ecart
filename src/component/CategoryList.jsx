@@ -23,6 +23,7 @@ export default function CategoryList() {
         setLoading(true)
         await axios.get(`https://fakestoreapi.com/products/${id}`).then((response) => {
           setProduct(response.data)
+          console.log(response.data,"hhhuu");
           setLoading(false)
         })
       }
@@ -53,8 +54,8 @@ export default function CategoryList() {
     const ShowProducts = () => {
       return(
         <>
-        <div className="row" key={product.id} >
-        <div className="col-md-6">
+        <div className="row" >
+        <div className="col-md-6" key={product.title}>
             <img src={product.image}  height="400px" width="400px"/>
           </div>
           <div className="col-md-6">

@@ -1,20 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import { useEffect, useState } from 'react';
 import axios from "axios";
 import Skeleton from 'react-loading-skeleton';
 import { NavLink } from 'react-router-dom';
+import { addCart } from "../redux/action";
+import { useDispatch } from "react-redux";
 
 
 const Product = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
-    let componentMounted = true
+    let componentMounted = true;
 
+    const dispatch = useDispatch();
+    const addProduct = (product) => {
+      dispatch(addCart(product));
+    };
+    
     useEffect(() => {
         const getProducts = async () => {
              setLoading(true)
@@ -97,7 +103,7 @@ const Product = () => {
             return (
               <>
                 <div className='col-md-3 mb-4'>
-                  <div className="card h-100 text-center" key={product.id} >
+                  <div className="card h-100 text-center" >
                     <img className="card-img-top" src={product.image} alt="Card image cap" height={200} width={100}/>
                     <div className="card-body">
                       <h5 className="card-title">{product.title.substring(0, 12)}</h5>
