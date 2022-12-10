@@ -12,8 +12,7 @@ function Header() {
   return (
     <Navbar bg="light" className = "navbar-light bg-light py-3 shadow-sm"expand="lg">
       <Container>
-       {/* <Image src="./assets/logo.jpg"  rounded height={50} width={120}/> */}
-       <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+       <Image src="../assets/logo.jpeg"  rounded height={50} width={120}/>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -23,13 +22,13 @@ function Header() {
           >
             <NavLink to="/" className="nav-link">Home</NavLink>
             <NavLink to="/product" className="nav-link">Product</NavLink>
-            <NavLink to="/about" className="nav-link">About</NavLink>
+            <div  className="nav-link">About</div>
           </Nav>
         </Navbar.Collapse>
         <div className="buttons">
-          <a href="" className="btn btn-outline-dark ms-2">
+          <NavLink className="btn btn-outline-dark ms-2" to="/cart">
            <i className="fa fa-shopping-cart me-1"></i>Cart ({state.length})
-          </a>
+          </NavLink>
         </div>
       </Container>
     </Navbar>

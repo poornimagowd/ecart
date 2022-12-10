@@ -71,7 +71,7 @@ const Product = () => {
   const ShowProducts = () => {
       return(
         <>
-          <div className='mb-4 category-name'>
+          <div className='mb-4 category-name' >
             <Row>
             <Col xs={1} md={1}></Col>
               <Col xs={2} md={2} onClick={() => setFilter(data)}>
@@ -103,7 +103,7 @@ const Product = () => {
             return (
               <>
                 <div className='col-md-3 mb-4'>
-                  <div className="card h-100 text-center" >
+                  <div className="card h-100 text-center" key={product.id}>
                     <img className="card-img-top" src={product.image} alt="Card image cap" height={200} width={100}/>
                     <div className="card-body">
                       <h5 className="card-title">{product.title.substring(0, 12)}</h5>

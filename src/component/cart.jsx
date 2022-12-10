@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { addCart, deleteCart } from "../redux/action";
+import Image from 'react-bootstrap/Image';
+
 
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
@@ -16,10 +18,11 @@ const Cart = () => {
 
   const emptyCart = () => {
     return (
-      <div className="px-4 my-5 bg-light rounded-3 py-5">
-        <div className="container py-4">
+      <div className="px-4">
+        <div className="">
           <div className="row">
-            <h3>Your Cart is Empty</h3>
+            <Image src="../assets/cart-empty.png"  width={700} height={600}/>
+            <NavLink to="/product"   className="btn btn-outline-dark mb-5 mx-auto" style={{width: 100}}>Shop Now</NavLink>
           </div>
         </div>
       </div>
@@ -70,10 +73,10 @@ const Cart = () => {
         <div className="container">
           <div className="row">
             <NavLink
-              to="/checkout"
+              to="/product"
               className="btn btn-outline-dark mb-5 w-25 mx-auto"
             >
-              Proceed to Checkout
+              Select More Products
             </NavLink>
           </div>
         </div>
